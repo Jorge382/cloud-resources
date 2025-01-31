@@ -1,0 +1,11 @@
+# Usa una imagen base de Nginx
+FROM nginx:latest
+
+# Copia tu archivo index.html al directorio predeterminado de Nginx
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expone el puerto 80
+EXPOSE 80
+
+# Comando por defecto para ejecutar Nginx
+CMD ["nginx", "-g", "daemon off;"]

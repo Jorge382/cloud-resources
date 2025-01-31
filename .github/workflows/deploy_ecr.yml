@@ -3,25 +3,24 @@ name: Deploy to ECR with Terraform
 on:
   push:
     branches:
-      - develop  # O la rama que uses para despliegues
+      - develop
   pull_request:
     branches:
-      - develop  # O la rama que uses para despliegues
+      - develop
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
     steps:
     # Paso 1: Configurar el repositorio
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     # Paso 2: Configurar Terraform
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
       with:
-        terraform_version: 1.10.2                                         
+        terraform_version: 1.10.2
 
     # Paso 3: Configurar las credenciales de AWS para Terraform
     - name: Set up AWS credentials
@@ -29,7 +28,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: "eu-west-3"  # Cambia según tu región
+        aws-region: ${{ env.AWS_REGION }}
 
     # Paso 4: Navegar a la carpeta donde está el archivo ecr.tf
     - name: Change directory to modulo_ecr
@@ -38,17 +37,14 @@ jobs:
     # Paso 5: Inicializar Terraform en la carpeta `modulo_ecr`
     - name: Terraform Init
       run: terraform init
-      working-directory: ./modulo_ecr  # Cambiar a la carpeta de tu módulo
+      working-directory: ./modulo_ecr
 
     # Paso 6: Ejecutar terraform plan en la carpeta `modulo_ecr`
     - name: Terraform Plan
       run: terraform plan -out=tfplan
-      working-directory: ./modulo_ecr  # Cambiar a la carpeta de tu módulo
+      working-directory: ./modulo_ecr
 
     # Paso 7: Ejecutar terraform apply para aplicar los cambios
     - name: Terraform Apply
       run: terraform apply -auto-approve tfplan
-      working-directory: ./modulo_ecr  # Cambiar a la carpeta de tu módulo
-    # Paso 7: (Opcional) Guardar el estado de terraform en S3
-    # Puedes agregar un paso para guardar el estado de Terraform si usas un backend remoto (por ejemplo, S3).
-
+      working-directory:

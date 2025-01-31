@@ -11,6 +11,8 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+      env:
+      AWS_REGION: eu-west-3
     steps:
     # Paso 1: Configurar el repositorio
     - name: Checkout repository
@@ -47,4 +49,4 @@ jobs:
     # Paso 7: Ejecutar terraform apply para aplicar los cambios
     - name: Terraform Apply
       run: terraform apply -auto-approve tfplan
-      working-directory:
+      working-directory: ./modulo_ecr

@@ -11,8 +11,7 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    env:
-      AWS_REGION: eu-west-3  # Correct placement of the env section
+    environment: development 
     steps:
     # Paso 1: Configurar el repositorio
     - name: Checkout repository

@@ -1,2 +1,2 @@
-# Local .terraform directories
-**/.terraform/*
+.terraform/
+modulo_ecr/

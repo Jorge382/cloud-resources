@@ -1,3 +1,1 @@
-●Markdown
-●Copiar código: # Infrastructure Resources Configuraciones de IaC para gestionar recursos en AWS.
-
+[![CI/CD](https://github.com/Jorge382/cloud-resources/blob/develop/.github/workflows/prueba.yml/badge.svg)](https://github.com/Jorge382/cloud-resources/blob/develop/.github/workflows/prueba.yml/prueba.yml)

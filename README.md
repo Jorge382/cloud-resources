@@ -1,2 +1,3 @@
-[![CI/CD](https://github.com/miusuario/mi-repo/actions/workflows/prueba.yml/badge.svg)](https://github.com/miusuario/mi-repo/actions/workflows/prueba.yml)
+[![CI/CD](https://github.com/Jorge382/cloud-resources/blob/develop/.github/workflows/prueba.yml/badge.svg)](https://github.com/Jorge382/cloud-resources/blob/develop/.github/workflows/prueba.yml/prueba.yml)
+
 

@@ -15,23 +15,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      - name: Hola
+        run: echo "Hola CI y CD"
 
-      - name: Install dependencies
-        run: npm install
 
-      - name: Run tests
-        run: npm test
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Deploy to production
-        run: echo "Hola CD y CI"

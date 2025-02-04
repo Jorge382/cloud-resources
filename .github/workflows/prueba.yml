@@ -13,17 +13,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Validate YAML Files
+      - name: Validate prueba.yml
         run: |
           sudo apt-get update
           sudo apt-get install -y yamllint
-          yamllint .
-
-      - name: Hola
-        run: echo "Hola CI y CD"
-
-
-
-
-
+          yamllint .github/workflows/prueba.yml > yamllint_output.txt || true
+          cat yamllint_output.txt

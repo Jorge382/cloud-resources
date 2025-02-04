@@ -1,1 +1,1 @@
-[![CI/CD](https://github.com/Jorge382/cloud-resources/blob/develop/.github/workflows/prueba.yml/badge.svg)](https://github.com/Jorge382/cloud-resources/blob/develop/.github/workflows/prueba.yml/prueba.yml)
+[![CI/CD Workflow](https://github.com/Jorge382/cloud-resources/actions/workflows/prueba.yml/badge.svg?branch=develop)](https://github.com/Jorge382/cloud-resources/actions/workflows/prueba.yml)

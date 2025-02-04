@@ -18,4 +18,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y yamllint
           yamllint .github/workflows/prueba.yml > yamllint_output.txt || true
+          echo "Resultados de yamllint:"
           cat yamllint_output.txt
+      - name: Hola
+        run: echo "Hola CI y CD"
